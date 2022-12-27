@@ -34,5 +34,17 @@ public class Author {
                 ')';
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Author authorInside = (Author) o; /* для удобства */
+        return Objects.equals(name, authorInside.name) && Objects.equals(lastName, authorInside.lastName);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, lastName);
+    }
 
 }

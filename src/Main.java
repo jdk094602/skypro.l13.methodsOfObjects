@@ -28,16 +28,38 @@ public class Main {
         System.out.println(bookUS);
         System.out.println(bookRU);
         /* поменяем дату публикации российской книге */
+        System.out.println("Поменяем дату публикации российской книге");
+
         bookRU.setPublished(1999);
         /* проверим */
         System.out.println(bookRU);
 
-//        Задание
+
+//        Задание по уроку Методы объектов
 //        Реализуйте методы toString, equals и hashCode в классах Author и Book, которые вы создали на прошлом уроке.
 //
 //                Обратите внимание, что toString книги не должен дублировать код из toString автора,
 //                а должен делегировать (вызывать) его версию метода.
 //
+        System.out.println("Задание по уроку Методы объектов");
+        /* Сравним объекты - авторы  */
+        System.out.println("Убедимся при разных объектах - " + author1.equals(author2));
+        /* убедимся при одинаковых объектах */
+        Author author3 = (Author) author1;
+        System.out.println("Убедимся при одинаковых объектах - " + author1.equals(author3));
+        /* Hash одинкаовых объектов */
+        System.out.println("Hash - код '" + author1 + "' = " + author1.hashCode());
+        System.out.println("Hash - код '" + author3 + "' = " + author3.hashCode());
+        /* Hash разных объектов */
+        System.out.println("Hash - код '" + author2 + "' = " + author2.hashCode());
+
+        /* Сравним объекты - книги */
+        System.out.println("Сравним объекты - книги : " + bookUS.equals(bookRU));
+
+        System.out.println("Hash - код '" + bookUS + "' = " + bookUS.hashCode());
+        System.out.println("Hash - код <" + bookRU + "> = " + bookRU.hashCode());
+
+
 
 
     }

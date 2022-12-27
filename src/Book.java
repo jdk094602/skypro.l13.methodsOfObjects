@@ -36,8 +36,23 @@ public class Book {
         this.published = published;
     }
 
+    @Override
     public String toString() {
         return this.title + " " + this.author + " " + this.published;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true; /* любой объект равен сам себе  */
+        if (o == null || getClass() != o.getClass()) return false; /* если пустой или другого класса */
+        Book book = (Book) o;
+        return published == book.published && Objects.equals(title, book.title) && Objects.equals(author, book.author);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(title, author, published);
+    }
+
 
 }
